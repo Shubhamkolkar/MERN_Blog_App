@@ -5,10 +5,12 @@ import Singin from './Pages/Singin'
 import Dashboard from './Pages/Dashboard'
 import About from './Pages/About'
 import Login from './Pages/Login'
+import Header from './Components/Header'
 
 const App = () => {
   return (
     <BrowserRouter>
+    <Header/>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/ddashboard' element={<Dashboard/>}/>
