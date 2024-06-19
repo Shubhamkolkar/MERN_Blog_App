@@ -6,6 +6,7 @@ import Dashboard from './Pages/Dashboard'
 import About from './Pages/About'
 import Login from './Pages/Login'
 import Header from './Components/Header'
+import Projects from './Pages/Projects'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/ddashboard' element={<Dashboard/>}/>
+      <Route path='/projects' element={<Projects/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signin' element={<Singin/>}/>
       <Route path='/about' element={<About/>}/>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 // import { IoMoonOutline } from "react-icons/io5";
 // <IoMoonOutline />
 {/* <IoMoonSharp /> */}
 
 const Header = () => {
-
+const paths = useLocation().pathname
   return (
     <>
       <nav className="bg-slate-200 p-4 flex justify-between items-center">
@@ -34,15 +34,15 @@ const Header = () => {
           </form>
 
           {/* Navigation Links */}
-          <ul className="flex items-center space-x-4">
-            <li>
-              <Link to="/" className="text-white hover:text-gray-300">Home</Link>
+          <ul className="flex items-center space-x-4 ">
+          <li>
+              <Link to="/" className={`text-gray-700 hover:text-gray-300 ${location.pathname === '/' ? 'text-blue-400' : ''}`}>Home</Link>
             </li>
             <li>
-              <Link to="/about" className="text-white hover:text-gray-300">About</Link>
+              <Link to="/about" className={`text-gray-700 hover:text-gray-300 ${location.pathname === '/about' ? 'text-blue-400' : ''}`}>About</Link>
             </li>
             <li>
-              <Link to="/projects" className="text-white hover:text-gray-300">Projects</Link>
+              <Link to="/projects" className={`text-gray-700 hover:text-gray-300 ${location.pathname === '/projects' ? 'text-blue-400' : ''}`}>Projects</Link>
             </li>
           </ul>
         </div>
@@ -50,7 +50,9 @@ const Header = () => {
         {/* Dark Mode and Sign In Buttons */}
         <div className="flex items-center">
           <button className="bg-blue-500 hover:bg-blue-700 text-white px-3 py-1 rounded-lg">
+            <Link to="/signin">
             Sign In
+            </Link>
           </button>
         </div>
       </nav>
