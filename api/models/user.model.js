@@ -1,5 +1,6 @@
-const { Timestamp } = require('bson');
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
+
 const Schema = mongoose.Schema;
 
 // Define the user schema
@@ -18,7 +19,7 @@ const UserSchema = new Schema({
     type: String,
     required: true
   }
-},{Timestamps:true}
+},{timestamps:true}
 );
 
 // Create the User model
