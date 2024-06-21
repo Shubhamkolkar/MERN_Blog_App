@@ -4,9 +4,10 @@ import Home from './Pages/Home'
 import Singin from './Pages/Singin'
 import Dashboard from './Pages/Dashboard'
 import About from './Pages/About'
-import Login from './Pages/Login'
 import Header from './Components/Header'
 import Projects from './Pages/Projects'
+import Signup from './Pages/Signup'
+import FooterCom from './Components/Footer'
 
 const App = () => {
   return (
@@ -14,12 +15,13 @@ const App = () => {
     <Header/>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/ddashboard' element={<Dashboard/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
       <Route path='/projects' element={<Projects/>}/>
-      <Route path='/login' element={<Login/>}/>
+      <Route path='/signup' element={<Signup/>}/>
       <Route path='/signin' element={<Singin/>}/>
       <Route path='/about' element={<About/>}/>
     </Routes>
+    <FooterCom/>
     </BrowserRouter>
   )
 }

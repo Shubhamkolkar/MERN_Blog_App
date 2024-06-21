@@ -9,11 +9,11 @@ const Header = () => {
 const paths = useLocation().pathname
   return (
     <>
-      <nav className="bg-slate-200 p-4 flex justify-between items-center">
+      <nav className="bg-[#efefef] p-4 flex justify-between items-center">
         {/* Brand Logo */}
         <div className="flex items-center">
           <Link to="/">
-            <span>DevBlog</span>
+            <span className='text-xl font-bold'>DevBlog.</span>
           </Link>
         </div>
 
