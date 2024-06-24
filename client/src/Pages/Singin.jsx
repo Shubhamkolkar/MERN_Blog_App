@@ -6,6 +6,7 @@ import {
   signInSuccess,
   signInFailure,
 } from '../redux/user/userSlice.js';
+import OAuth from '../Components/OAuth.jsx';
 
 const Singin = () => {
   const [formData, setFormData] = useState({
@@ -92,6 +93,7 @@ const Singin = () => {
           </button>
           {errorMessage && <div className="mt-4 text-red-500">{errorMessage}</div>}
         </form>
+        <OAuth/>
         <div className='flex gap-2 text-sm mt-5'>
           <span>Create a new account </span>
           <Link to='/signup' className='text-blue-500'>
