@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signoutSuccess } from '../redux/user/userSlice';
 
 const Header = () => {
-  const path = useLocation().pathname;
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -31,7 +30,6 @@ const Header = () => {
         console.log(data.message);
       } else {
         dispatch(signoutSuccess());
-        navigate('/');
       }
     } catch (error) {
       console.log(error.message);
@@ -45,6 +43,9 @@ const Header = () => {
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
   };
+
+  // Log the current pathname for debugging
+  // console.log("Current path:", location.pathname);
 
   return (
     <nav className="bg-[#efefef] p-4 flex justify-between items-center border-b-2">
@@ -77,13 +78,13 @@ const Header = () => {
       {/* Navigation Links */}
       <ul className="flex items-center space-x-4">
         <li>
-          <Link to="/" className={`text-gray-700 hover:text-gray-300 ${path === '/' ? 'text-blue-400' : ''}`}>Home</Link>
+          <Link to="/" className={`text-gray-700 hover:text-gray-300 ${location.pathname === '/' ? 'text-blue-700' : ''}`}>Home</Link>
         </li>
         <li>
-          <Link to="/about" className={`text-gray-700 hover:text-gray-300 ${path === '/about' ? 'text-blue-400' : ''}`}>About</Link>
+          <Link to="/about" className={`text-gray-700 hover:text-gray-300 ${location.pathname === '/about' ? 'text-blue-700' : ''}`}>About</Link>
         </li>
         <li>
-          <Link to="/projects" className={`text-gray-700 hover:text-gray-300 ${path === '/projects' ? 'text-blue-400' : ''}`}>Projects</Link>
+          <Link to="/projects" className={`text-gray-700 hover:text-gray-300 ${location.pathname === '/projects' ? 'text-blue-700' : ''}`}>Projects</Link>
         </li>
       </ul>
 

@@ -69,7 +69,7 @@ const signup = () => {
 
 
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-4">Sign In</h2>
+        <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <input type="text" id="username" name="username" placeholder="Username" value={formData.username} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
