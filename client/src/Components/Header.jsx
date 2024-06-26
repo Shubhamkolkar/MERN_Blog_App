@@ -95,6 +95,7 @@ const Header = () => {
             <button
               className="flex items-center focus:outline-none"
               onClick={() => setShowProfileDropdown(!showProfileDropdown)}
+              
             >
               <img
                 src={currentUser.profilePicture}

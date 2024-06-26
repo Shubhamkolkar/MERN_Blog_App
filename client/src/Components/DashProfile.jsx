@@ -157,7 +157,7 @@ export default function DashProfile() {
       exit={{ opacity: 0 }}
       className='max-w-lg mx-auto p-3 w-full'
     >
-      <h1 className='my-7 text-center font-semibold text-3xl text-gray-800 dark:text-white'>Profile</h1>
+      <h1 className='my-7 text-center font-semibold text-3xl text-gray-800 '>Profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
           type='file'
@@ -234,7 +234,7 @@ export default function DashProfile() {
           {loading ? 'Loading...' : 'Update'}
         </button>
         {currentUser.isAdmin && (
-          <Link to={'/create-post'}>
+          <Link to={'/createpost'}>
             <button className='w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-md hover:from-pink-400 hover:to-purple-400 transition duration-300'>
               Create a Post
             </button>
