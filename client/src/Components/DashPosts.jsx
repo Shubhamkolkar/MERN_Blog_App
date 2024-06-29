@@ -28,7 +28,7 @@ export default function DashPosts() {
     if (currentUser.isAdmin) {
       fetchPosts();
     }
-  }, [currentUser._id]);
+  }, [currentUser._id, currentUser.isAdmin]);
 
   const handleShowMore = async () => {
     const startIndex = userPosts.length;
@@ -71,48 +71,52 @@ export default function DashPosts() {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="w-full p-3">
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
-          <table className="table-auto w-full">
+          <table className="min-w-full table-auto shadow-md">
             <thead>
-              <tr className="bg-gray-200">
-                <th className="p-2">Date updated</th>
-                <th className="p-2">Post image</th>
-                <th className="p-2">Post title</th>
-                <th className="p-2">Category</th>
-                <th className="p-2">Delete</th>
-                <th className="p-2">Edit</th>
+              <tr className="bg-gray-100">
+                <th className="px-4 py-2 text-left">Date updated</th>
+                <th className="px-4 py-2 text-left">Post image</th>
+                <th className="px-4 py-2 text-left">Post title</th>
+                <th className="px-4 py-2 text-left">Category</th>
+                <th className="px-4 py-2 text-left">Delete</th>
+                <th className="px-4 py-2 text-left">Edit</th>
               </tr>
             </thead>
             <tbody>
               {userPosts.map((post) => (
-                <tr key={post._id} className="border-b">
-                  <td className="p-2">{new Date(post.updatedAt).toLocaleDateString()}</td>
-                  <td className="p-2">
+                <tr key={post._id} className="bg-white border-b divide-y">
+                  <td className="px-4 py-2">{new Date(post.updatedAt).toLocaleDateString()}</td>
+                  <td className="px-4 py-2">
                     <Link to={`/post/${post.slug}`}>
-                      <img src={post.image} alt={post.title} className="w-20 h-10 object-cover bg-gray-500" />
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-20 h-10 object-cover bg-gray-500"
+                      />
                     </Link>
                   </td>
-                  <td className="p-2">
-                    <Link className="text-blue-600" to={`/post/${post.slug}`}>
+                  <td className="px-4 py-2">
+                    <Link className="font-medium text-gray-900" to={`/post/${post.slug}`}>
                       {post.title}
                     </Link>
                   </td>
-                  <td className="p-2">{post.category}</td>
-                  <td className="p-2">
-                    <button
+                  <td className="px-4 py-2">{post.category}</td>
+                  <td className="px-4 py-2">
+                    <span
                       onClick={() => {
                         setShowModal(true);
                         setPostIdToDelete(post._id);
                       }}
-                      className="text-red-600"
+                      className="font-medium text-red-500 hover:underline cursor-pointer"
                     >
                       Delete
-                    </button>
+                    </span>
                   </td>
-                  <td className="p-2">
-                    <Link className="text-blue-600" to={`/update-post/${post._id}`}>
+                  <td className="px-4 py-2">
+                    <Link className="text-teal-500 hover:underline" to={`/updatepost/${post._id}`}>
                       Edit
                     </Link>
                   </td>
@@ -123,7 +127,7 @@ export default function DashPosts() {
           {showMore && (
             <button
               onClick={handleShowMore}
-              className="w-full text-blue-600 py-2"
+              className="w-full text-teal-500 text-sm py-2"
             >
               Show more
             </button>
@@ -134,8 +138,8 @@ export default function DashPosts() {
       )}
 
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded shadow-md">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+          <div className="bg-white rounded-lg p-6">
             <div className="text-center">
               <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 mb-4 mx-auto" />
               <h3 className="mb-5 text-lg text-gray-500">
