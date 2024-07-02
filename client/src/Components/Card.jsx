@@ -10,7 +10,7 @@ const Card = ({post}) => {
                 <img
                    src={post.image}
                    alt='post cover'
-                   className='h-[260px] w-full  object-cover group-hover:h-[200px] transition-all duration-300 z-20'
+                   className='w-full h-48 object-cover  object-cover group-hover:h-[200px] transition-all duration-300 z-20'
                 />
                 </Link>
             </div>
@@ -42,7 +42,7 @@ const Card = ({post}) => {
                     </Link>
                 </div>
 
-                <div className="mt-4 flex items-center space-x-4">
+                {/* <div className="mt-4 flex items-center space-x-4">
                     <div className="flex items-center text-gray-500 space-x-1">
                         <span className="text-red-500">❤️</span>
                         <span>6 reactions</span>
@@ -52,7 +52,7 @@ const Card = ({post}) => {
                         <span>4 comments</span>
                     </div>
                     <div className="text-gray-500">2 min read</div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
