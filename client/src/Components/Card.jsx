@@ -22,13 +22,7 @@ const Card = ({post}) => {
 
                 <Link to={`/post/${post.slug}`}>
                 <div className="flex items-center space-x-3">
-                    <img
-                        className="w-10 h-10 rounded-full"
-                        src="path-to-your-profile-image"
-                        alt="Profile"
-                        />
                     <div>
-                        <div className="font-medium text-black">Stokry</div>
                         <div className="text-gray-500"><span>{post && new Date(post.createdAt).toLocaleDateString()}</span></div>
                     </div>
                 </div>
