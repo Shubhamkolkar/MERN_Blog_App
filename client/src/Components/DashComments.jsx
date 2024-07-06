@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
-import { FaCheck, FaTimes } from 'react-icons/fa';
 
 export default function DashComments() {
   const { currentUser } = useSelector((state) => state.user);
@@ -72,7 +71,7 @@ export default function DashComments() {
   };
 
   return (
-    <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+    <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-gray-100 scrollbar-thumb-gray-300'>
       {currentUser.isAdmin && comments.length > 0 ? (
         <>
           <table className='min-w-full leading-normal shadow-md'>
@@ -100,7 +99,7 @@ export default function DashComments() {
             </thead>
             <tbody>
               {comments.map((comment) => (
-                <tr className='bg-white dark:bg-gray-800' key={comment._id}>
+                <tr className='bg-white' key={comment._id}>
                   <td className='px-5 py-5 border-b border-gray-200 text-sm'>
                     {new Date(comment.updatedAt).toLocaleDateString()}
                   </td>
