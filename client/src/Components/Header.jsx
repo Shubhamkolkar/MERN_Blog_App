@@ -83,9 +83,6 @@ const Header = () => {
         <li>
           <Link to="/about" className={`text-gray-700 hover:text-gray-300 ${location.pathname === '/about' ? 'text-blue-700' : ''}`}>About</Link>
         </li>
-        <li>
-          <Link to="/projects" className={`text-gray-700 hover:text-gray-300 ${location.pathname === '/projects' ? 'text-blue-700' : ''}`}>Projects</Link>
-        </li>
       </ul>
 
       {/* User Profile */}

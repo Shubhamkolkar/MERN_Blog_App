@@ -5,7 +5,7 @@ import Singin from './Pages/Singin'
 import Dashboard from './Pages/Dashboard'
 import About from './Pages/About'
 import Header from './Components/Header'
-import Projects from './Pages/Projects'
+
 import Signup from './Pages/Signup'
 import FooterCom from './Components/Footer'
 import PrivateRoute from './Components/PrivateRoute'
@@ -30,7 +30,6 @@ const App = () => {
           <Route path='/createpost' element={<CreatePost />} />
           <Route path='/updatepost/:postId' element={<UpdatePost />} />
         </Route>
-      <Route path='/projects' element={<Projects/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/signin' element={<Singin/>}/>
       <Route path='/search' element={<Search/>}/>
