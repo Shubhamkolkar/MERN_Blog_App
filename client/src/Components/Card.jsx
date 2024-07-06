@@ -29,7 +29,7 @@ const Card = ({post}) => {
                         />
                     <div>
                         <div className="font-medium text-black">Stokry</div>
-                        <div className="text-gray-500">Jun 21</div>
+                        <div className="text-gray-500"><span>{post && new Date(post.createdAt).toLocaleDateString()}</span></div>
                     </div>
                 </div>
 
